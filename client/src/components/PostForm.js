@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { updatePost, addPost } from '../reducers/apps'
+import { updatePost, addPost } from '../reducers/posts'
 import { Form } from 'semantic-ui-react';
 
 class PostForm extends React.Component {

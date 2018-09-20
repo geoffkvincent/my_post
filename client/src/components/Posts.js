@@ -3,10 +3,17 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../reducers/posts';
 import { Container, Grid, Header, Card, Image, Dropdown, Divider, Button } from 'semantic-ui-react';
+import PostForm from './PostForm'
 
 class Posts extends React.Component {
 
-  state = { category: ''}
+  state = { category: '', showForm: false }
+
+  toggleForm = () => {
+    this.setState( state => {
+      return { showForm: !state.showForm }
+    })
+  }
 
   categoryOptions = () => {
     const { categories } = this.props
@@ -42,10 +49,17 @@ class Posts extends React.Component {
   }
 
   render() {
-    let { category } = this.state;
+    let { category, showForm } = this.state;
     return (
       <Container>
         <Header as="h3" textAlign="center">Posts</Header>
+        <Button onClick={this.toggleForm}>
+          { showForm ? 'Back' : 'New Post' }
+        </Button>
+        { showForm ?
+          <PostForm closeForm={this.toggleForm} />
+          :
+          <div>
         <Dropdown
           placeholder="Filter by category"
           fluid
@@ -59,6 +73,8 @@ class Posts extends React.Component {
           <Card.Group itemsPerRow={4}>
            { this.posts() }
           </Card.Group>
+          </div>
+        }
         </Container>
       )
     }

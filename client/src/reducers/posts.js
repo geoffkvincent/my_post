@@ -14,21 +14,21 @@ export const getPosts = (cb) => {
   }
 }
 
-export const addApp = (post) => {
+export const addPost = (post) => {
   return (dispatch) => {
     axios.post('/api/posts', { post } )
      .then( res => dispatch({ type: ADD_POST, post: res.data }) )
   }
 }
 
-export const updateApp = (post) => {
+export const updatePost = (post) => {
   return (dispatch) => {
     axios.put(`/api/posts/${post.id}`, { post } )
       .then( res => dispatch({ type: UPDATE_POST, post: res.data }) )
   }
 }
 
-export const deleteApp = (id) => {
+export const deletePost = (id) => {
   return (dispatch) => {
     axios.delete(`/api/posts/${id}`)
       .then( () => dispatch({ type: DELETE_POST, id }) )
