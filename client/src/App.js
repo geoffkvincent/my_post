@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Home from './components/Home';
-import Posts from './components/Posts';
-import Post from './components/Post';
+import FetchPosts from './components/FetchPosts';
 import NavBar from './components/NavBar';
 import NoMatch from './components/NoMatch';
 
@@ -11,8 +10,7 @@ const App = () => (
     <NavBar />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/posts" component={Posts} />
-      <Route exact path="/posts/:id" component={Post} />
+      <Route path="/posts" component={FetchPosts} />
       <Route component={NoMatch} />
     </Switch>
   </Fragment>
