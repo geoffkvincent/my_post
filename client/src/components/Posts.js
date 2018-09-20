@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getPosts } from '../reducers/posts';
-import { Container, Grid, Header, Card, Image, Dropdown, Divider, Button } from 'semantic-ui-react';
+import { Container, Header, Card, Dropdown, Divider, Button } from 'semantic-ui-react';
 import PostForm from './PostForm'
 
 class Posts extends React.Component {

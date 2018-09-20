@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Divider, Header, Image, Container, Table, Button } from 'semantic-ui-react';
+import { Header, Container, Table, Button } from 'semantic-ui-react';
 import PostForm from './PostForm'
 
 
@@ -23,7 +23,7 @@ class Post extends React.Component {
            { showForm ?
          <PostForm {...post} closeForm={this.toggleForm} />
             :
-        <div>
+     <div>
          <Header as="h3" textAlign="center">{post.name}</Header>
     
          <Table definition>
@@ -31,7 +31,7 @@ class Post extends React.Component {
         
         </Table.Header>
 
-      <Table.Body>
+        <Table.Body>
         <Table.Row>
           <Table.Cell>Description</Table.Cell>
           <Table.Cell>{post.body}</Table.Cell>
@@ -42,7 +42,7 @@ class Post extends React.Component {
           <Table.Cell>{post.category}</Table.Cell>
         </Table.Row>
       </Table.Body>
-    </Table>
+      </Table>
     </div>
         }
       </Container>
