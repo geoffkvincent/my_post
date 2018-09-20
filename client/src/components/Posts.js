@@ -8,12 +8,6 @@ class Posts extends React.Component {
 
   state = { category: ''}
 
-  
-
-  componentDidMount() {
-    this.props.dispatch(getPosts())
-  }
-
   categoryOptions = () => {
     const { categories } = this.props
     return categories.map( (c) => { return { key: c, text: c, value: c } } )
